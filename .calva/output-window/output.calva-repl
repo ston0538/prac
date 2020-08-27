@@ -1,0 +1,53 @@
+; This is the Calva evaluation results output window.
+; Leave it open, please. Because quirks.
+; TIPS: The keyboard shortcut `ctrl+alt+c o` shows and focuses this window
+;   when connected to a REPL session.
+; Please see https://calva.io/output/ for more info.
+; Happy coding! ♥️
+
+; Jacking in...
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS: 
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - File URLs in stacktrace frames are peekable and clickable.
+clj::prac.prac=>
+; Jack-in done.
+; Evaluating file: prac.clj
+#'prac.prac/-main
+clj::prac.prac=>
+; Running test: -main…
+; No tests found. 😱, ns: 0, vars: 0
+clj::prac.prac=>
+; Evaluating file: prac_test.clj
+#'prac.prac-test/test-prac
+clj::prac.prac-test=>
+; Running test: test-prac…
+; 1 tests finished, all passing 👍, ns: 1, vars: 1
+clj::prac.prac-test=>
+; Evaluating file: prac_test.clj
+#'prac.prac-test/test-prac
+clj::prac.prac-test=>
+; Running test: test-prac…
+; FAIL in prac.prac-test/test-prac (prac_test.clj:11):
+; Cries serpent! with a snake_case version of the input
+;   expected: "Serpent! You said: hellothere"
+;   actual: ("Serpent! You said: hello_there")
+; 1 tests finished, problems found. 😭 errors: 0, failures: 1, ns: 1, vars: 1
+clj::prac.prac-test=>
+; Evaluating file: prac_test.clj
+#'prac.prac-test/test-prac
+clj::prac.prac-test=>
+; Running test: test-prac…
+; 1 tests finished, all passing 👍, ns: 1, vars: 1
+clj::prac.prac-test=>
+; Evaluating file: prac.clj
+#'prac.prac/-main
+clj::prac.prac=>
+; Running test: -main…
+; No tests found. 😱, ns: 0, vars: 0
+clj::prac.prac=>
