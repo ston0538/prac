@@ -157,3 +157,54 @@
   (str "The flowers are " flower1 " and " flower2))
 
 (flower-colors {:flower1 "red" :flower2 "blue"})
+
+; 지연의 힘
+(take 3 (range))
+
+(range 5)
+
+(count (take 1000 (range)))
+
+(repeat 3 "rabbit")
+
+(take 5 (repeat "rabbit"))
+
+(let [rabbit (repeat 3 "rabbit")] (first rabbit))
+
+(rand-int 100)
+
+(repeat 5 (rand-int 100))
+
+#(rand-int 10)
+
+(#(rand-int 10))
+
+(repeatedly 5 #(rand-int 10))
+
+(take 3 (cycle ["big", "small"]))
+(take 8 (cycle ["big", "small"]))
+
+(take 3 (rest (cycle ["big", "small"])))
+
+; 재귀
+(def adjs ["normal", "too small", "too big", "is swimming"])
+
+(defn alice-is [in out]
+  (if (empty? in) out
+      (alice-is (rest in) (conj out (str "Alice is " (first in))))))
+
+(defn alice-loop [input]
+  (loop [in input out []]
+    (if (empty? in) out
+        (recur (rest in) (conj out (str "Alice is " (first in)))))))
+
+(alice-is adjs [])
+(alice-loop adjs)
+
+; recur의 재귀 호출 스택
+(defn countdown [n] (if (= n 0) n (countdown (- n 1))))
+(defn countdown-loop [n] (if (= n 0) n (recur (- n 1))))
+
+(countdown 3)
+(countdown 100000)
+(countdown-loop 100000)
