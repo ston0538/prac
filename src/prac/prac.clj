@@ -208,3 +208,35 @@
 (countdown 3)
 (countdown 100000)
 (countdown-loop 100000)
+
+
+; 데이터 변환
+(def animals [:mouse :duck :pig :dog])
+
+; 키워드를 문자열로 변환
+(#(str %) :mouse)
+
+(map #(str %) animals)
+
+; 정수 무한 시퀀스 map
+(take 3 (map #(str %) (range)))
+(take 20 (map #(str %) (range)))
+
+; 부수효과
+(println "Look at the mouse!")
+
+(def animal-print (map #(str %) animals))
+(def animal-print-sideEffect (map #(println %) animals))
+
+animal-print-sideEffect
+
+; 부수효과 강제
+(def animal-print-sideEffect-doall (doall (map #(println %) animals)))
+animal-print-sideEffect-doall
+
+; map2 - map의 인수
+(def animals ["mouse", "pig", "dog", "cow"])
+(def colors ["black", "red", "white", "purple"])
+
+(defn gen-animal-string [animal color]
+  (str color "-" animal))
